@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="app">
+
+    <!-- Start Scene -->
+    <div class="scene" id="startScene">
+      <button id="startBtn">Aloita</button>
+    </div>
+
+    <!-- Message Scene -->
+    <div class="scene hidden" id="messageScene">
+      <div id="particles"></div>
+
+      <div class="message">
+        <h1>Hyvää Äitienpäivää!</h1>
+        <p>Rakastan sinua niin paljon.</p>
+        <p>T: Ville</p>
+      </div>
+
+      <button id="gameBtn">Peli</button>
+    </div>
+
+    <!-- Game Scene -->
+    <div class="scene hidden" id="gameScene">
+    <div id="helpText">
+  tee ruudukoista random kuvioita ja paina ▶ jotta peli/simulaatio alkaa, voit myös piirtää pelin aikana.
+</div>
+      <canvas id="lifeCanvas"></canvas>
+
+      <div id="controls">
+        <button id="playPauseBtn">▶</button>
+        <input type="range" id="speedSlider" min="50" max="500" value="500">
+      </div>
+    </div>
+
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+#app {
+width: min(90vw, 600px);
+height: min(95vh, calc(min(90vw, 600px) * 1.6));
+background: #111;
+border-radius: 30px;
+overflow: hidden;
+position: relative;
+}
+.scene {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.scene.hidden {
+  display: none !important;
+}
+
+/* Start scene */
+#startScene {
+display: flex;
+justify-content: center;
+align-items: center;
+background: linear-gradient(180deg, #0a0f24, #0d1b3d);
+}
+
+#startBtn {
+padding: 20px 40px;
+font-size: 2rem;
+border-radius: 20px;
+border: none;
+background: #ff99c8;
+color: white;
+box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Message scene */
+#messageScene {
+background: linear-gradient(180deg, #0a0f24, #0d1b3d);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+position: relative;
+}
+
+#particles {
+position: absolute;
+inset: 0;
+overflow: hidden;
+z-index: 1;
+}
+
+.message {
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+}
+
+.message h1,
+.message p {
+    text-shadow:
+    0 0 3px #fff,
+    0 0 6px #fff,
+    0 0 10px rgba(255,255,255,0.6);
+    font-size: 2.4rem;
+    color: #b30059;
+    margin-bottom: 10px;
+}
+
+.message p {
+    font-size: 1.4rem;
+    color: #660033;
+}
+
+#gameBtn {
+z-index: 2;
+margin-top: 40px;
+padding: 14px 28px;
+font-size: 1.2rem;
+border: none;
+border-radius: 20px;
+background: #ff99c8;
+color: white;
+box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Particles */
+.particle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation: floatUp linear infinite;
+    filter: blur(1px);
+}
+.spark {
+    position: absolute;
+    width: 4px;
+    height: 25px;
+    background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,0.8));
+    border-radius: 2px;
+    animation: sparkFloat linear infinite;
+    filter: blur(0.5px);
+}
+
+@keyframes sparkFloat {
+    from {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0.5;
+    }
+    to {
+        transform: translateY(-120vh) rotate(20deg);
+        opacity: 0.6;
+    }
+}
+
+/* Game scene */
+#gameScene {
+background: #111;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+#lifeCanvas {
+background: #000;
+border: 4px solid #0ff;
+border-radius: 10px;
+touch-action: none;
+}
+
+#controls {
+margin-top: 20px;
+display: flex;
+gap: 20px;
+align-items: center;
+}
+
+#playPauseBtn {
+padding: 10px 20px;
+font-size: 1.4rem;
+border-radius: 10px;
+border: none;
+background: #0ff;
+color: #000;
+}
+
+#speedSlider {
+width: 200px;
+}
+#helpText {
+color: #fff;
+font-size: 1rem;
+text-align: center;
+padding: 10px;
+opacity: 0.8;
+max-width: 90%;
+}
